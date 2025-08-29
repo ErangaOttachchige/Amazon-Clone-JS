@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v5.1.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-5.1.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-5.1.1/jasmine.css">
+
+  <script src="lib/jasmine-5.1.1/jasmine.js"></script>
+  <script src="lib/jasmine-5.1.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-5.1.1/boot0.js"></script>
+  <!-- optional: include a file here that configures the Jasmine env -->
+  <script src="lib/jasmine-5.1.1/boot1.js"></script>
+
+  <!-- The above code is the code for loading the jasmine framework  -->
+
+  <script src="./utils/moneyTest.js" type="module"></script>
+  <script src="./data/cartTest.js" type="module"></script>
+  <script src="./checkout/orderSummaryTest.js" type="module"></script>
+
+</head>
+
+<body>
+  <!-- 
+  so remember how we said, we need to create an element with the class 'js-order-summary' ==>
+  (document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;) 
+  -->
+
+  <!-- 
+  So we are going to create that element and put it inside this below <div>
+  -->
+
+  <!-- 
+  so this below <div> is gonna act like a container, the reason we use a container, is that when we create elements in our test, we dont want to be modifying our entire <body> element, because the <body> might contain our other test results from Jasmine. Therefore we put everything inside a container 
+  -->
+
+  <!-- 
+  also we give this <div> a class name because then we can use it in our JavaScript, to make it clear this is a container for all of our test code. 
+  -->
+
+  <div class="js-test-container"></div>
+  <!-- 
+  now lets get this container into our test file ==> (check orderSummaryTest.js file)
+  -->
+
+
+</body>
+</html>
+
+
+<!-- 
+in Jasmine 'spec' is another name for 'test' (spec = test) 
+-->
+
+
+<!-- 
+
+Testing framework helps us to do all of the things we were doing manually
+  1. Create test suite
+  2. Create tests
+  3. Compare values and display the result 
+
+-->
+
+
+<!-- 
+Testing Framework = external library that helps us write tests easier 
+-->
+
+
+<!-- 
+Unit Tests = testing 1 piece of the code 
+
+Integration Test = tests many units of code /pieces of code working together
+-->

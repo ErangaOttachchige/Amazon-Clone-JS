@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Project</title>
+
+    <!-- This code is needed for responsive design to work.
+      (Responsive design = make the website look good on
+      smaller screen sizes like a phone or a tablet). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Load a font called Roboto from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Here are the CSS files for this page. -->
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/amazon-header.css">
+    <link rel="stylesheet" href="styles/pages/amazon.css">
+  </head>
+  <body>
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <a href="amazon.html" class="header-link">
+          <img class="amazon-logo"
+            src="images/amazon-logo-white.png">
+          <img class="amazon-mobile-logo"
+            src="images/amazon-mobile-logo-white.png">
+        </a>
+      </div>
+
+      <div class="amazon-header-middle-section">
+        <input class="search-bar" type="text" placeholder="Search">
+
+        <button class="search-button">
+          <img class="search-icon" src="images/icons/search-icon.png">
+        </button>
+      </div>
+
+      <div class="amazon-header-right-section">
+        <a class="orders-link header-link" href="orders.html">
+          <span class="returns-text">Returns</span>
+          <span class="orders-text">& Orders</span>
+        </a>
+
+        <a class="cart-link header-link" href="checkout.html">
+          <img class="cart-icon" src="images/icons/cart-icon.png">
+          <div class="cart-quantity js-cart-quantity">0</div>
+          <div class="cart-text">Cart</div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="main">
+      <div class="products-grid js-products-grid">
+
+      </div>
+    </div>
+
+    <!-- import products.js file --> 
+     <!-- why ===> first we need to load that file(products.js) on our HTML page -->
+
+    <!-- What this <scripts> does is, this will run the files one by one  -->
+    <!-- first it will run the products.js file and ***create the array*** -->
+     
+    <!-- And secondly, it will run the amazon.js file and ***generate the HTML***-->
+
+    <!-- we need to load cart.js file in to our HTML -->
+
+    <!-- <script src="./data/cart.js"></script> -->
+
+    <!-- let's add it at the top, this is to make sure we load the cart before running the rest of our code -->
+
+    <!-- <script src="./data/products.js"></script> -->
+    <!-- because of using moudles in amazon.js we are just deleting these scripts tags related to cart.js & product.js -->
+    <!-- <script></script> tags will just load the related code onto the html page -->
+
+
+    <!-- Entry point (we need one JS file to load our code and so this file will import all the other files that we created using modules)-->
+    <script type="module" src="./scripts/amazon.js"></script>
+    <!-- *** type="module" *** attribute, basically let's this file to get variables out of other files -->
+
+    
+
+    <!-- So the way this works is that inside amazon.html we are loading 2 JavaScript files -->
+
+    <!-- ./data/products.js ==> this JavaScript file creates all the products and then this ./scripts/amazon.js ==> JavaScript file loops through the products and creates all the HTML -->
+
+    <!-- So keep in mind that <script></script> elements are loaded one by one, so the order matters, we have to create products array and then we can use it, if these 2 JS were reversed then the code would not work   -->
+
+
+
+
+
+
+
+    <!-- Modules == a better way to organize our code -->
+
+    <!-- 
+    <script src="./data/cart.js"></script>
+    <script src="./data/products.js"></script>
+    <script src="./scripts/amazon.js"></script> 
+
+
+    1. above three scripts are basically the same thing as combining all the files together into 1 big file.
+
+    2. Then running all the code of that 1 big file. 
+
+
+    However there is a big problem when using <scripts> tags like this and that problem is, this can cause **naming conflicts**
+
+    In our situation here, we created a variable called named 'cart' in cart.js. This means we can not use the variable named 'cart' in any of our other files. 
+    -->
+
+
+    <!-- ***********************************************************************************************************************************************************************************************************************************
+	  Modules == a better way to organize our code
+
+
+	 keep in mind that <script></script> elements are loaded one by one, so the order matters, we have to create products array and then we can use it, if these 2 JS were 	reversed then the code would not work
+
+
+    <script src="./data/cart.js"></script>
+    <script src="./data/products.js"></script>
+    <script src="./scripts/amazon.js"></script> 
+
+
+    1. above three scripts are basically the same thing as combining all the files together into 1 big file.
+
+    2. Then running all the code of that 1 big file. 
+
+
+    However there is a big problem when using <scripts> tags like this and that problem is, this can cause **naming conflicts**
+
+    In our situation here, we created a variable called named 'cart' in cart.js. This means we can not use the variable named 'cart' in any of our other files.
+
+
+    ***********************************************************************************************************************************************************************************************************************************
+    Modules == a better way to organize our code 
+
+    This is how we solve this above problem using a feature of JavaScript called "Modules" 
+
+
+    *** Module basically contains a variable only inside a file
+
+
+    ***** How to Create a Module *******
+
+    1. Create a file and write our code inside it
+    2. Don't load the file with a <script> tag,   
+
+    by doing this Any variables we create inside the file, will be contained inside the file, and it won't cause naming conflicts.
+
+
+  So that is basically how we create a module
+
+    ***********************************************************************************************************************************************************************************************************************************
+
+      Now we gonna learn ***how to Get a Variable out of a File or a Module in JavaScript***
+
+      To do that we gonna do 3 steps
+
+      1. Add type="module" attribute  (<script type="module" src="./scripts/amazon.js"></script>)
+      2. Export
+      3. Import -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
