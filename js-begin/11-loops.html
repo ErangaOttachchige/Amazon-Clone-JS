@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops</title>
+</head>
+<body>
+
+
+  
+
+  <script>
+
+    //loops = let us run some code, over and over
+
+
+    //In javascript there is 2 types of loops
+    // 1. while loop
+    // 2. for loop
+
+    //while loop
+    let i = 1;
+
+    while(i <= 5) { 
+      console.log(i);
+      i++;  //incement step
+    }
+    //each time we run a loop, it is called an "iteration"
+
+    // for loop
+
+    // 1. loop variable
+    // 2. loop condition
+    // 3. increment step
+    for(let i = 1; i <=5; i++) {
+      console.log(i);
+    }
+
+
+    // while vs for loops
+    //********************
+    // Standard loop => for
+    // Non-standard loop => while
+
+    //Example of Non-standard loop
+    // Generate random numbers until one of that is at least 0.5
+
+
+    let randomNumber = 0;
+
+     while(randomNumber < 0.5) {
+      randomNumber = Math.random(); // this will generate a random number between 0 and 1
+      console.log(randomNumber);
+     }
+
+     // the above is non-standard loop because we don't know how many times it will run
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

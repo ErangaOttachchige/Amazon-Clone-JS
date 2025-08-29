@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looping through an array</title>
+</head>
+<body>
+  
+  <script>
+
+    /////////////////////////////////////////////////////////////////
+
+    // Looping Through an Array
+
+    // 1. Go through each value of an array one by one
+    // 2. Do something with each value
+
+    const todoList = [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ]
+
+    for(let i = 0; i < todoList.length; i++) {
+      const value = todoList[i];
+      console.log(value);
+    }
+
+
+    ////////////////////////////////////////////////////////////////////
+
+    // Accuumulator Pattern (technique that we can combine with looping through an array)
+
+    // 1. Create a variable to store the result
+    // 2. Loop through the array and update the result
+
+    //*Problem 1:
+    //*Problem 1: Add all the numbers in an array together
+    // We have an array of numbers
+    // [1, 1, 3]
+    //how do we calculate the total of all the numbers in the array?
+
+    const nums = [1, 1, 3];
+
+    // Accuumulator Pattern (technique that we can combine with looping through an array)
+    // 1. first we Create a variable to store the result
+    // 2. and then we Loop through the array and update the result
+
+    let total = 0; // this is the variable to store the result (accuumulator variable)
+
+    for(let i = 0; i < nums.length; i++) {
+      const num = nums[i];
+      total += num;
+    }
+
+    console.log(total);
+
+
+
+
+    ////////////////////////////////////////////////////////////////////
+    //*Problem 2:
+    // Create a copy of the array with each number multiplied by 2
+    // [1, 1, 3] => [2, 2, 6]
+
+    //Accuumulator Pattern (technique that we can combine with looping through an array)
+    // 1. Create a variable to store the result
+    // 2. Loop through the array and update the result
+
+    let numsDoubled = []; // this is the variable to store the result (accuumulator variable) 
+    // so we can use different type of values to accumulate the result(it all depends on the problem we are trying to solve)
+    // in this case we are going to use an array to store the result
+
+    for(let i = 0; i < nums.length; i++) {
+      const num = nums[i];
+      numsDoubled.push(num * 2); // this will add the value to the end of the array
+    }
+
+    console.log(numsDoubled);
+
+  </script>
+</body>
+</html>

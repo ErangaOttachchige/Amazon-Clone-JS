@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>
+    hello
+  </button>
+
+
+  
+  <Script>
+    // DOM - Document Object Model
+    // The document object represents/models the web page
+    // The document object has methods and properties that allow us to interact with the web page
+
+    console.log(document.title);
+    document.title = 'Changed';
+
+    console.log(document.body);
+    //The DOM combines JavaScript and HTML together
+    // when an HTML element is inside javascript, the HTML element is converted into a javascript object
+    console.log(typeof document.body);
+
+    //the innerHTML property controls all the HTML inside the body
+    console.log(document.body.innerHTML);
+    document.body.innerHTML = '<button>Click meeeee</button>';
+
+    /*
+    document.body.innerHTML = 'hello';
+    document.title = 'good job!';
+    */
+
+    //REMINDER: the document object is the entry point to the DOM
+    // the document object has properties and methods that allow us to interact with the web page
+
+    // method = function that is saved inside an object
+  </Script>
+</body>
+</html>

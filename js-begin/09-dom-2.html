@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>
+    Hello
+  </button>
+
+  <button class="js-button">Second button</button>
+
+
+  <script>
+    console.log(document.querySelector('button'));
+
+    // every HTML element has a property called .innerHTML 
+    // --this property controls all the HTML inside the element
+    // --this property is a string that contains all the HTML inside the element
+    console.log(document.querySelector('button').innerHTML);
+    console.log(document.querySelector('button')
+      .innerHTML = 'Changed'); 
+
+
+
+    //REMINDER: the document object is the entry point to the DOM
+    // the document object has properties and methods that allow us to interact with the web page
+
+    // method = function that is saved inside an object
+    
+    // document.querySelector(), 
+    // --lets us get **any element** from the page and put it inside javaScript
+
+    // and again HTML elements are converted into JavaScript objects
+    /*
+    console.log(document.querySelector('.js-button'));
+    */
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement); // <button class="js-button">Second button</button>
+
+    //DOM combines JavaScript and HTML together
+    //It gives JavaScript full control of the webpage
+
+  </script>
+</body>
+</html>

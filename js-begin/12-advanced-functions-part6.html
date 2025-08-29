@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions ( .addEventListener() )</title>
+</head>
+<body>
+
+  <button onclick="" class="js-button">Click </button>
+  
+  <script>
+    // .addEventListener()
+    // to use .addEventListener(), first we gonna get this <button> and put it into our JS using **document.querySelector()**
+
+    const buttonElement =  document.querySelector('.js-button');
+
+    // Every HTML element has a method called .addEventListener()
+
+    // .addEventListener() - lets us run some code when we inteact with the element
+
+    const eventListener = () => {
+      console.log('click');
+    }
+
+    buttonElement.addEventListener('click', eventListener);
+    // .addEventListener() has 2 parameters 
+    // 1. event
+    // 2. A function that we want to run
+
+    // (1. event) --> what type of interaction we want listen for (ex: 'click' --> this will run some code when we click this button)
+    // (the way to find these event names is to look at this attribute 'onclick', the word after 'on' is the event 'click')
+
+    // In .addEventListener(), 2nd parameter (the function) does the same thing as the "onclick" attribute
+
+    // .addEventListener() has some advantages over using an attribute (ex: 'onclick')
+
+    // ***************************advantages*****************************
+    // 1. lets us add Multiple event listeners for one event
+    // For example: let's add another 'click' EventListener to the above 'click' <button>
+
+    // 2. We can remove an event listener using a method called .removeEventListener() 
+
+    buttonElement.removeEventListener('click', eventListener);
+    // .removeEventListener() also have 2 parameters
+    // 1. event
+    // 2. function that we want to remove, So that when we 'click' this button it will no longer run that function
+    // now we can't just type copy of this function, () => {  console.log('click2'); } for the .removeEventListener('click', ); ........ So we need to use this exact function inside the remove event, to do that we need to save the function in a variable in the begining like below 
+
+    // const eventListener = () => {
+    //   console.log('click');
+    // }
+
+
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    });
+    // So .addEventListener() let us add mutiple event listeners to one event
+
+
+
+    // summary
+    //********************************************************************
+    // So add event listener gives us more control over event listeners
+    // 1. We can add multiple event listeners to a one event 
+    // 2. Remove an event listener from an event
+
+    // Best Practice: Because of these advantages the best practice is to use .addEventListener() instead of onclick="..." attribute
+
+
+  </script>
+</body>
+</html>

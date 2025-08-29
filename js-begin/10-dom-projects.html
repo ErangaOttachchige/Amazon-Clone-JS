@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+    <style>
+      
+      body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        /* 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px; 
+        */
+        padding: 10px;
+      }	
+
+
+      .calculate-button{
+        background-color: green;
+        color: white;
+        border: none;
+        /* 
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+        padding-right: 15px; 
+        */
+        padding: 12px 15px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button
+      onclick="
+        Subscribe();
+        "
+      class="js-subscribe-button subscribe-button"
+    >
+      Subscribe
+    </button>
+
+    <P>Amazon Shipping Calculator</P>
+    <input placeholder="Cost of order" 
+      class="js-cost-input cost-input"
+      onkeydown="
+        handleCostKeydown(event);
+
+      ">
+    <button onclick="
+      CalculateTotal();
+    "
+    class="calculate-button"
+    >Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+
+
+
+    <!-- *innerText* will give us the text inside the element without all the sapaces around it, it gets us the text without extra spaces -->
+
+    <!-- innerHTML vs innerText
+    innerHTML = all the HTML inside the element
+    innerText = all the text inside the element
+    innerText = all the text inside the element, but it doesn't include addtional SPACES AND NEW LINES
+    innerHTML = ALL THE SPACES AND NEW LINES ARE INCLUDED TOO
+    -->
+
+    <!-- onkeydown = "..." , which runs Javascript when we press a key down on our keyboard -->
+
+
+    <!-- clicks, keydowns => events
+    onclick, onkeydown => event listeners (they check for events and run Javascript when those events happen)
+
+    Event Listeners
+
+    onclick = click
+    onkeydown = key press
+    onscroll = scrolling
+    onmouseenter = hovering over
+    onmouseleave = stop hovering over -->
+
+    <script>
+
+
+      function handleCostKeydown(event){
+          // every event listener including 'onclick' gets an 'event' object
+          // 'key' is a property of the event object, it gives us the key that we pressed
+          //  event.key will give us the key that was pressed
+        if(event.key === 'Enter'){
+          CalculateTotal();
+        }
+      }
+
+
+
+
+      function CalculateTotal() {
+
+        const inputElement = document.querySelector('.js-cost-input');
+
+        // 1. GET THE TEXT IN THE TEXT BOX
+        // inputElement.value, this is how we get the text inside the input box
+
+        let cost = Number(inputElement.value);
+        //whnever we get a value from the DOM, the value will be a string, so we need to convert it to a number in this case
+        // we can use the Number() function to convert a string to a number
+
+
+        // 2. if amount is less than 40, add 10 to the cost	
+        if(cost < 40){
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+
+      function Subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+          buttonElement.classList.add('is-subscribed'); // adds a class to the button element
+
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+          buttonElement.classList.remove('is-subscribed'); // removes a class from the button element
+        }
+      }
+
+        // change the CSS when we click a button
+        // inside javaScript every HTML element(because in javaScript HTML elements are convert to objects) has another property called ".classList"
+        // .classList = gives us control of the class attribute
+        // .classList is an object which means it has properties and methods we can use.
+        // .classList.add('class-name') = adds a class to an element
+        // .classList.remove('class-name') = removes a class from an element
+
+      // **One solution**
+      // When we click the button
+      // 1. Add a class
+      // 2. THis class will have differt CSS styles
+
+    </script>
+  </body>
+</html>

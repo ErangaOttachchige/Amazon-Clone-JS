@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button
+      onclick="
+        Subscribe();
+        "
+      class="js-subscribe-button"
+    >dd
+      Subscribe
+    </button>
+
+    <P>Amazon Shipping Calculator</P>
+    <input placeholder="Cost of order" 
+      class="js-cost-input"
+      onkeydown="
+        handleCostKeydown(event);
+
+      ">
+    <button onclick="
+      CalculateTotal();
+    "
+    >Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+
+
+
+    <!-- *innerText* will give us the text inside the element without all the sapaces around it, it gets us the text without extra spaces -->
+
+    <!-- innerHTML vs innerText
+    innerHTML = all the HTML inside the element
+    innerText = all the text inside the element
+    innerText = all the text inside the element, but it doesn't include addtional SPACES AND NEW LINES
+    innerHTML = ALL THE SPACES AND NEW LINES ARE INCLUDED TOO
+    -->
+
+    <!-- onkeydown = "..." , which runs Javascript when we press a key down on our keyboard -->
+
+
+    <!-- clicks, keydowns => events
+    onclick, onkeydown => event listeners (they check for events and run Javascript when those events happen)
+
+    Event Listeners
+
+    onclick = click
+    onkeydown = key press
+    onscroll = scrolling
+    onmouseenter = hovering over
+    onmouseleave = stop hovering over -->
+
+    <script>
+
+      // More details about javascript
+
+      //Manually convert a string to a number
+      Number("10") // 10
+
+      // Manually convert a number to a string
+      String(10) // "10"
+
+      // Type coercion
+      // Type coercion (automatic type conversion)
+      console.log('25' - 5); // 20 (if a string 'only' contains a number and we - * /, it will convert the string to a number and do the operation)
+      console.log('25' + 5); // 255
+
+      //Lets learn another build in Object (window object)
+      // document object represents the webpage
+      // window object represents the browser
+      window.document; // this is the same as document object, but it is a property of the window object
+      window.console.log('window'); // this is the same as console.log('window'), but it is a property of the window object
+      window.alert('window'); // this is the same as alert('window'), but it is a property of the window object
+
+      // But we dont have to type "window". Javavascript automatically adds it for us. So we can just type "document" or "console" or "alert" and it will work.
+
+      function handleCostKeydown(event){
+          // every event listener including 'onclick' gets an 'event' object
+          // 'key' is a property of the event object, it gives us the key that we pressed
+          //  event.key will give us the key that was pressed
+        if(event.key === 'Enter'){
+          CalculateTotal();
+        }
+      }
+
+
+
+
+      function CalculateTotal() {
+
+        const inputElement = document.querySelector('.js-cost-input');
+
+        // 1. GET THE TEXT IN THE TEXT BOX
+        // inputElement.value, this is how we get the text inside the input box
+
+        let cost = Number(inputElement.value);
+        //whnever we get a value from the DOM, the value will be a string, so we need to convert it to a number in this case
+        // we can use the Number() function to convert a string to a number
+
+
+        // 2. if amount is less than 40, add 10 to the cost	
+        if(cost < 40){
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+
+      function Subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
+
+
+
+
+
+    </script>
+  </body>
+</html>

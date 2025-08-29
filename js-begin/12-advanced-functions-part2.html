@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions ( setTimeout(),setInterval() )</title>
+</head>
+<body>
+  
+  <script>
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    // setTimeout() --> built-in function in JS
+
+    // setTimeout() - allows us to run a function in the future
+
+
+    // setsetTimeout() take 2 parameters
+    // 1. A function that we want to run in the future
+    // 2. How long to wait before running this function (a number in milliseconds) 1000 milliseconds = 1 second
+
+    // So setTimeout() will wait for 3 seconds and then call the function inside the setTimeout()
+    setTimeout(function() {       // this is a 'Asynchronous code'
+      console.log('timeout');      
+      console.log('timeout2');    // In addition all the code inside this function is also 'Synchronous code', it will wait for each line to finish before going to the next line
+    }, 3000); 
+    
+    // So that is setsetTimeout(), we give it a function and it will call this function after a certain amount of time
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    console.log('next line');
+
+    // Asynchronous code ----> computer won't wait for a line to finish, before going to the next line
+
+    // So setTimeout(), it will just set up the timer and then immediately go to the next line.
+
+    // Synchronous code -----> computer will wait for one line to finish before going to the next line
+    //  So all the code we have wriiten in this course so far has been 'Synchronous code'
+
+
+    // Advantage of Asynchronous code
+    // - it does not block our code for 3 seconds, waiting for this timer to finish, it just sets up the timer in the background and then goes to the next line of code
+    // so this allows our code to do other things while this(3 seconds) timer is running in the background
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // setInterval() --> another built-in function in JS, we can call it using brackets
+    // setInterval() takes these same 2 parameters as setTimeout()
+    // 1. A function that we want to run in the future
+    // 2. A number in milliseconds
+    
+
+    setInterval( function() {
+      console.log('interval');
+    }, 3000); //So setInterval() will run this function 3 seconds in the future, but this time ----> it will keep running the function every 3 seconds
+
+    // So setInterval() is also "Asynchronous code", it will keep running a function in the future after a certain period of time
+
+    console.log('next line 2');
+
+  </script>
+</body>
+</html>

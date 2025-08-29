@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+</head>
+<body>
+  
+
+  <script>
+
+    //Arrays are References
+
+    // In the object lesson we learned that *objects are references*, arrays work the same way
+
+    //If we create an array 
+    const array1 = [1, 2, 3];
+    // This "array1" variable does not actually contains the values 1,2 and 3
+    // Actually this array is saved somewhere in the computer's memory and this "array1" variable only contains a reference for that, points to where this array is in computer meomory 
+
+    //and that means if we create a copy of this variable (array1),
+    const array2 = array1; //array2 does not contain a copy of the values, it actually just contains a copy of the reference. 
+    //So now both of these variables are pointing to the same array
+    //So if we did 
+    array2.push(4);
+    console.log(array1);
+    console.log(array2);
+    //this will show us, even though we added 4 to (array2), array1 and array2 are both modified and that because arrays are references, so both of these point to the same array in computer memory
+
+    //to avoid this behavoir we can create a copy of the values in the array using a method called '.slice()'
+    const array3 = array1.slice(); // this will make a copy of the values in array1
+    // and now these 2 variables (array1 and array3) points to 2 different arrays
+    array3.push(4);
+    console.log(array1);
+    console.log(array3);
+
+
+    // 2nd additonal details about arrays
+    // Shortcut: Destructuring
+
+    const array4 = [1, 2, 3];
+    //general way of get the first value and the second value out of this array
+    // const firstValue = array4[0];
+    // const secondValue = array4[1];
+
+    // another way is to use a shortcut called destructuring 
+    const [firstValue, secondValue] = [1, 2, 3]; //so this is an easier way to get values out of an array and save them inside a variable
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // More details about loops.
+  // 1. break = exit a loop early, lets us stop a loop early
+  // 2.continue = skip 1 iteration of a loop or one run of a loop
+
+
+  // create a loop tht counts from 1 to 10
+  for(let i = 1; i <= 10; i++) {
+    //skip the number 3
+    if(i === 3) {
+      continue; // this will skip the rest of this code and go back up to the top of the loop and do i = 4
+    }
+    console.log(i);
+    //when i = 8, stop this loop early
+    if(i === 8) {
+      break;
+    }
+  }
+
+
+  //skip a number if it is divisible by 3
+  //divisible by 3 = the number can be divided evenly into 3
+
+  // 3 ok (3/3)
+  // 6 ok (6/3) 3 and 6 are both divisible by 3
+  // 7 not okay (7/3) but 7 is not divisible by 3 because there is 1 remaining (it is called as 'remainder')
+  // we can calculate the remainder using the remainder operator which is look like this, (7 % 3) => 1
+
+  for(let i = 1; i <= 10; i++) {
+    //skip the number 3
+    if(i % 3 === 0) {
+      continue; // this will skip 3 and 6
+    }
+    console.log(i);
+    //when i = 8, stop this loop early
+    if(i === 8) {
+      break;
+    }
+  }
+
+  //count from 1 to 10 using a while loop
+  // Skip numbers that are divisible by 3 (3,6,9)
+  let i = 1;
+
+  while(i <= 10) {
+    if(i % 3 === 0) {
+      i++;
+      continue;
+    }
+    console.log(i);
+    i++;
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // How to use loops with functions
+  
+  // lets say we have an array of numbers and we want to create a copy of this array where each number is doubled
+
+  //what if we wanted to use this loop on a different array other than [1,1,3]. We can do that using a function
+
+  const nums = [1, 1, 3];
+
+  let numsDoubled = []; 
+
+  for(let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    numsDoubled.push(num * 2); 
+  }
+
+  console.log(numsDoubled);
+
+
+  function doubleArray(nums) {
+    // const nums = [1, 1, 3];
+    // instead of doing this loop on the same array every time, we can turn this into a parameter => nums
+
+    let numsDoubled = []; 
+
+    for(let i = 0; i < nums.length; i++) {
+      const num = nums[i];
+      // if we see the number 0, stop this loop early
+      if (num === 0) {
+        return numsDoubled; //return statement will end this function immediately
+
+        // So "return" is another way of breaking out of a loop "when it is inside a function" //////////////////////////////////////////////////////////////////////////////
+
+      }
+      numsDoubled.push(num * 2); 
+    }
+
+    return numsDoubled;
+  }
+
+  console.log(doubleArray([2,2,4,10]));
+  console.log(doubleArray([2,2,4,6,8]));
+  console.log(doubleArray([2,2,4,0,8]));
+  
+
+  </script>
+</body>
+</html>

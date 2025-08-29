@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="styles/11-todo-list-part3.css">
+</head>
+<body>
+
+  <p>Todo List</p>
+  <div class="todo-input-grid">
+    <input placeholder="Todo name" class="js-name-input name-input">
+    <!-- // date input  -->
+    <input type="date" class="js-due-date-input due-date-input">  
+    <!-- <input type="text" placeholder="Todo description" class="js-description-input">	(type="text" which is the default value is gonna a textbox) -->
+    <button
+      onclick="
+        addTodo();
+      "
+     class="add-todo-button">Add
+    </button>
+  </div>
+
+
+
+  <!-- div => container -->
+  <!-- <div> is a block element (it will take up an entire line by itself)-->
+  <div class="js-todo-list todo-grid">
+  </div>
+
+  <script src="scripts/11-todo-list-part3.js"></script>
+  
+</body>
+</html>
+

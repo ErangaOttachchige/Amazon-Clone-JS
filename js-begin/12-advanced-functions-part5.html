@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions ( Arrow Function part 2 - inside an object )</title>
+</head>
+<body>
+  
+  <script>
+
+
+    // regular object function 
+    const object = {
+      name: 'John',
+      age: 30,
+      method: function() {
+        console.log('Hello');
+      }
+    };
+
+    // We will review another place we could use arrow functions, Which is ****inside an object****
+    const object2 = {
+      method: () => {
+        console.log('hello');  
+      }
+    };
+
+
+    //**********************************************************************************
+    // ************ even though we could save an **arrow function** inside an object like above objects already have a shortcut for functions
+    // ************ So we can actually just write it like this below
+    const object3 = {
+      method() {
+        console.log('hello');                  // this syntax is called as the ***Shorthand Method*** syntax
+      }                                        // this ***Shorthand Method*** syntax is actually easier to read than the arrow function
+    };
+    //**********************************************************************************
+    // So when saving a function in an object, it is actually recommended to use this syntax
+
+  </script>
+</body>
+</html>

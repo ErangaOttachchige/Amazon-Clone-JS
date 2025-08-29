@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions ( .forEach() Loop )</title>
+</head>
+<body>
+  
+  <script>
+
+    // Loop through an array
+    // for(let i =0; i < array.length; i++) {
+    //   ....
+    // }
+    
+    // Another way to loop through an array is using a method of the array called ****** .forEach() ******
+
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value, index){
+      console.log(index); // index or the position of the value in the array
+      console.log(value);
+    }); //callback function is required here and its specifically like this
+    // what .forEach() does is, that it loops through the array and each of these values, it will save the each value in the 'value' parameter and run the function
+
+    // .forEach() is the preferred way to loop through an array
+
+
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value, index){
+
+
+      // .forEach() method do not have "continue" statement, but we can do the same thing with a "return" statement
+
+      // So let's say in this loop we don't like washing dishes, if the value is wash dishes, we gonna skip it and not display it in the console
+
+      if(value === 'wash dishes') {
+        return;                     // this return satement will end this function early and go on to the next function (basically does the same thing as "continue" in a for loop)
+      }
+                                    //  break --> lets us exit a loop early, unfortunately there is not an easy way to break in a forEach loop
+                                    // if we need to use break; then it is better to use a regular for loop
+
+
+
+      console.log(index); // index or the position of the value in the array
+      console.log(value);
+    }); //callback function is required here and its specifically like this
+    // what .forEach() does is, that it loops through the array and each of these values, it will save the each value in the 'value' parameter and run the function
+
+    // .forEach() is the preferred way to loop through an array
+
+  </script>
+</body>
+</html>

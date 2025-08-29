@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+</head>
+<body>
+  
+
+  <script>
+
+    // Arrays - another type of value in JavaScript
+    //        - represents a list of values
+
+    const myArray = [10, 20, 30];
+    console.log(myArray);
+    // Array = list of values
+
+    //To get a specific value in an array => []
+    console.log(myArray[0]);
+    console.log(myArray[1]);
+
+    myArray[0] = 99;
+    console.log(myArray);
+    
+    //inside an array we can put any type of array
+
+    //An array itself is also a value
+    // that means we can save arrays in variables or even save it in an array
+    [1, 'hello', true, {name: 'socks'}, [1, 2]]
+    //number, string, boolean, object, array
+    //we can also put arrays inside arrays	
+
+    console.log(typeof [1,2]); // this will tell us an array is an object
+    //Arrays are also objects(it is just a special type of object)
+
+    // if we want to check if something is specifically an array we can use the ""Array.isArray()"" method
+    console.log(Array.isArray([1, 2])); //true
+
+    //because arrays are just a type of objects, they also have properties and methods we can use
+
+    console.log(myArray.length); 
+
+    // .push() => Adds a value to the end of the array
+    myArray.push(100);
+    console.log(myArray);
+
+    // .splice() => this removes a value from an array
+    // .splice(index, how many values to remove)
+    // 1. index we want to start removing from
+    // 2. how many values we want to remove from that index
+
+    myArray.splice(0, 2); //removes the first value in the array
+    console.log(myArray); // [30, 100]
+    // 
+  </script>
+</body>
+</html>

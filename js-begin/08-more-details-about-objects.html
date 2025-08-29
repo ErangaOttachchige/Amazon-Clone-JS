@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More details about objects</title>
+</head>
+<body>
+
+  <script>
+
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 days', // bracket notation - lets us use properties that don't work with dot notation
+        // a shortcut here - when we create the object if we only have a string between the brackets, the brackets are optional
+        'delivery time': '1 days',
+
+        //inside an object, we can save any type of value
+
+        rating: {       // object inside an object (nested object)
+          stars: 4.5,
+          count: 87
+        },
+
+        //Another type of value we can put in an object is a function
+
+        func: function function1() {
+          console.log('function inside an object'); // a function is another type of value in JavaScript
+        }
+
+
+      };
+
+      console.log(product2);
+      console.log(product2.name); // dot notation 
+      console.log(product2['name']); // bracket notation
+      console.log(product2['delivery-time']); // undefined
+      console.log(product2.rating.count); // 87
+
+      product2.func(); // function inside an object
+
+      // function inside an object = Method
+
+      // 2 More Built-in Objects in JavaScript
+      // JSON - JavaScript Object Notation
+
+      // JavaScript Object to JSON String --> JSON.stringify()
+      console.log(JSON.stringify(product2)); 
+
+      // JSON String to JavaScript Object --> JSON.parse()
+      
+      const jsonString = JSON.stringify(product2); // JSON String
+      console.log(JSON.parse(jsonString));  // --> converts JSON String to JavaScript Object
+      
+      // localStorage --> another built-in object in JavaScript
+      // localStorage is used to save values more permanently in the browser
+
+  </script>
+</body>
+</html>

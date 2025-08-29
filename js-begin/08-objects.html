@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <!-- another type of value in javaScript called as objects -->
+   <!-- what is an object? -> An object groups multiple values together  --> 
+
+   <!-- objects
+   - let us group multiple values together
+   - let us use multiple values together -->
+
+
+  <script>
+
+  /*
+
+    // An object is another type of value
+    const product = {
+      name: 'socks',
+      price: 1090
+    };
+
+    //console.log( typeof product);
+
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+    console.log(product);
+
+    product.newProperty = true;
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);
+
+  */
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      message: 'hello'
+    };
+
+    const object2 = object1; // object2 is a reference to object1 (we are not actually copying the object1 into this varible, object2, we are copying the reference) So object2 actually refers to the same object as object1
+
+    object1.message = 'Good job!';
+    console.log(object1);
+
+    console.log(object2.message); 
+
+    const object3 = {
+      message: 'Good job!'
+    };
+
+    //objects are references
+    console.log(object1 === object3);  // false (because they compare the references, not the values inside the objects)
+
+    console.log(object2 === object1); // true (because they have the same reference) it is point to the same object in the computer memory
+
+    // Some Shortcuts for object properties
+    const object4 = {
+      message: 'Good jjob!',
+      price: 799
+    };
+
+    //const message = object4.message;
+    const { message, price } = object4; // this is a shortcut for the above line (destructuring)
+    // this will take the message property out of object4 and save it in a variable called message
+    console.log(message);
+    console.log(price);
+    // destructuring --> easier way to take properties out of an object
+
+
+    //shorthand property
+    const object5 = {
+      //message: message
+      //if the property name and the variable name are the same, we can use the shorthand property
+      message, // this is the shorthand property (it is the same as message: message)
+    };
+    console.log(object5);
+
+    //short hand method
+    const object6 = {
+      // method: function function1() {
+      //   console.log('method!!');
+      // }
+
+      method() {
+        console.log('method!!');
+      } // this code does the same as the above code(shorthand method)
+    };
+
+    object6.method();
+
+  </script>
+</body>
+</html>

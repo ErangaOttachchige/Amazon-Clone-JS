@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions (Arrow Function)</title>
+</head>
+<body>
+  
+  <script>
+
+    const regularFunction = function(param, param2) {  // parameters works the same way in both regular and Arrow function
+      console.log('hellohello');
+      console.log(param)
+      return 5;                                        // return statement also works the same way in both regular and Arrow function (just to demontrate added the value 5)
+    };
+
+
+
+    // A shorter way to write functions
+    // *************************************Arrow Functions***********************************
+
+    const arrowFunction = (param, param2) => {       // this is an Arrow Function  (mostly works the same as a regular function)
+      console.log('hello');
+      console.log(param)
+      return 5;                                     // return statement also works the same way in both regular and Arrow function (just to demontrate added the value 5)
+    };
+
+    // we can call this arrow function like this (typing the variable name and brackets)
+    arrowFunction(2,3);
+
+    // ***********************************************************************************************************************************************
+    // Differences between regular and Arrow functions
+    // Arrow functions have shortcuts
+
+    const oneParam = param => {                 // in this arrow function we gonna give it one parameter 'param'
+    console.log(param + 1);                     // So when an arrow function only has one parameter, these **(param)** round brackets are optional, So we can actually remove them
+    };
+
+    oneParam(7);
+
+
+    // Another shortcut ***************************************
+
+    const oneLine = () => 2 + 3;          // this is a one line arrow function(a shrotcut), 
+    // So when an arrow function only has one line like this, we can actually put it on the same line as the arrow, and now that everything is on the same line, the curly brackets are actually optional, So we can remov them
+    // we can also remove the 'return' statement, if we just have an arrow, it will automatically return the result on the right
+    console.log(oneLine()); // this function will return 2 + 3 and it will display 5 in the console.
+
+    // ********************************************************************************************************************
+    // Practice using arrow functions
+
+    // [
+    //   'make dinner',
+    //   'wash dishes',
+    //   'watch youtube'
+    // ].forEach(function(value, index){
+    //   if(value === 'wash dishes') {
+    //     return; 
+    //   }
+    //   console.log(index);
+    //   console.log(value);
+    // });
+
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach((value, index) => {      // lets use an arrow funcion here   //when we passing a function into a another function it is recommended to use arrow functions
+      if(value === 'wash dishes') {    // passing a function into a another function(like .forEach()) => use arrow functions
+        return; 
+      }
+      console.log(index);
+      console.log(value);
+    });
+
+
+  </script>
+</body>
+</html>

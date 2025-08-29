@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions ( More features that use functions as values .filter()
+    and .map() )</title>
+</head>
+<body>
+
+  <button onclick="" class="js-button">Click </button>
+  
+  <script>
+
+    // summary
+    //********************************************************************
+    // So add event listener gives us more control over event listeners
+    // 1. We can add multiple event listeners to a one event 
+    // 2. Remove an event listener from an event
+
+    // Best Practice: Because of these advantages the best practice is to use .addEventListener() instead of onclick="..." attribute
+
+    // ****************************************************************************************************
+
+    // More features that use functions as values
+
+    // **********************************************************************************
+    // in this lesson we previously learn about an array method (.forEach()), which lets us loop through an array
+
+    // example:
+
+    [1,2,3].forEach((value, index) => {
+      console.log(value);
+      console.log(index);
+    });
+
+    // there is 2 more **array** methods:
+    // 1 --> .filter()
+    // 2 --> .map()
+
+    // 1 --> .filter() **************************************************
+
+    // let say we have an array of numbers [1, -3, 5] and we want to create a copy of this array with all the negative numbers removed [1, 5]
+    // [1, -3, 5] --> [1, 5]
+
+    // So .filter() works the same way as .forEach()
+    // We give it a function and, this function also has 2 parameters (value, index)
+    // Now the only difference is that, this time this inner function will return a value
+
+    [1, -3, 5].filter((value, index) => {
+      return true;
+    }); 
+
+    // So now the return value matters
+    // So what .filter() does is 
+                                // 1. It creates a new array []
+                                // 2. If the inner function return 'true', it will put the related value in the new array
+                                // 3. If the inner function return 'false', it will not put the related value in the new array
+
+    // For example 
+    console.log([1, -3, 5].filter((value, index) => {
+      return true;
+    })) ;
+    // in the above example, the inner function always returns 'true', So all 3 values will be in the new array --> [1, -3, 5]
+    // if we change the return value to 'false' every time, all 3 values will not be added to the new array --> []
+
+    // So now let's use this to solve the problem 
+    // [1, -3, 5] --> [1, 5], Negative numbers removed
+
+    // - retrun true if positive
+    // - retrun false if negative
+    console.log([1, -3, 5].filter((value, index) => {
+
+      // if(value >= 0) {
+      //   return true;
+      // }
+      // else {
+      //   return false;
+      // }
+      
+      return value >= 0; // Shorten Logic for the above if else statement
+    }));
+
+
+    // 2 --> .map() **************************************************
+
+    // let's say we have have an array of [1, 1, 3] and we wanna make a copy of this aray with each number doubled --> [2, 2, 6]
+    //[1, 1, 3] --> [2, 2, 6]
+
+    // .map() works just like .forEach() and .filter()
+    
+    console.log([1, 1, 3].map((value, index) => {
+      return value * 2;
+    }));
+
+    // So what .map() does is, it creates a new array like .filter() and whatever we return will be added to the new array
+    // .map() --> 
+                // 1. it creates a new array
+                // Whatever we return => will be added to the new array
+
+    // .map() => transform an array into another array based on the return value
+
+    //***************************************************************************************
+    // Shortcuts of arrow functions
+
+    console.log([1, 1, 3].map(value =>  value * 2)); // this code does the same thing as the code above
+
+
+
+    //******************************************************************************************************************************************
+    // Closure --> a feature of an function
+    // Closure means --> - If a function has access to a value
+    //                   - It will always have access to that value
+    //                   - The value gets packaged together (enclosed) with the function
+  </script>
+</body>
+</html>

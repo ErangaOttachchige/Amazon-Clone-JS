@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions (Functions are values)</title>
+</head>
+<body>
+  
+  <script>
+
+    //Review: How to use functions
+    function greeting() {
+      console.log('hello');
+    }
+    greeting(); //Calling the function
+
+
+    const num = 2;
+
+    // Type of values: numbers, strings, booleans
+
+    // functions are also values
+
+    // and this means just like a number, we can save a function inside a variable
+
+    const function1 = function greeting(){
+      console.log('hello2');
+    };
+
+    console.log(function1);
+    console.log(typeof function1); 
+    //As you can see, So a function is just another type of value, and we can save it in a variable
+
+    //we can also run the function inside this variable
+    function1(); //this will run the code inisde this function
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Now let us do some Cleanup in the above code
+
+    //In JavaScript, as long as there's a way to access a function, this 'greeting' function name is not needed
+
+    // const function2 = function greeting(){
+    // console.log('hello2');
+    // };
+
+    // So here we can access the funtion using this variable name 'function1'
+
+    // So this is called as an anonymous function(function without a name)
+    const function2 = function(){
+    console.log('hello2');               
+    };
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // An interesting thing to know is, that the funtion syntax we have been using upto now, below 
+
+    function greeting() {
+      console.log('hello');     // Advantages 1. Easier to read, 2. Hoisting (which means we can call a function before we create it in the code) // So using hoisting we don't have to worry about what order we write this code
+    }
+
+    // is actually a Shortcut for
+
+    var greeting = function() {
+      console.log('hello');
+    };
+
+    // Hoisting does not work when we create a function and save it in a varible like this
+
+    // const function1 = function greeting(){
+    //   console.log('hello2');
+    // };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // What else we can do with a value?
+    // - Save a value in an object
+
+    const object1 = {
+      num: 2,
+      // fun: function greeting() {
+      //   console.log('hello3');     // So this save a function inside this object, under the property 'fun'
+      // }
+      fun: function() {
+        console.log('hello3');       //shortcut
+      }
+    }
+
+    // Now to access this function, we just use the dot notation as normal, and because the value inside the property "fun" is a function, we can call it using brackets, 'fun()'
+    object1.fun(); 
+    // So remember this is called as a 'Method'
+    // method - (function saved inside an object)
+    // Again as long as there is a way to access this function, for ex: 'object1.fun()' , we do not need the 'greeting' function name
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // What else we can do with a value?
+    // - pass a value into a function
+
+    function display(param) {
+      console.log(param);
+    }
+
+    display(2); // this funtion will take the value 2, save it insde 'param' parameter and then we can use it just like a variable (Passing a value into a function)
+
+
+    // Because function are values, We can also pass a function into a function 
+    function run(param) {
+      // because 'param' contains a function, we can actually call it using brackets, ()
+      param();
+    }
+    run(function() {
+      console.log('running');  // this will take this function and save it inisde the parameter 'param', and up there we can use 'param' just like a variable
+    });
+
+    // this is called (Passing a function into another function)
+    // the function that we are passing in --> 
+    // function() {
+    //   console.log('running'); 
+    // }
+
+    // is called as "Callback function" or a "Callback"
+
+
+  </script>
+</body>
+</html>
